@@ -15,7 +15,7 @@ select
         and s1.stoc_cantidad > 0
     ) as [depositos con stock],
     isnull((
-        select sum(s1.stoc_cantidad)
+        select sum(s2.stoc_cantidad)
         from stock s2
         where s2.stoc_producto = p.prod_codigo
     ), 0) as [stock en todos los depositos]
